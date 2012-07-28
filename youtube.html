@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Youtube</title>
+	<style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+    </head>
+    <body>
+	<div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#">David Silveira</a>
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="http://davidsilveira.me" target="_blank">My page</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+    <div class="container">
+
+      <h1>Youtube video library</h1>
+      <p>[quick explanation about this app]</p>
+      <form id="create" action="" class="form-horizontal"></form>
+      <div id="errorMsg"></div>
+      <h2>Your videos
+          <small>you have <span id="video_count">0</span> videos in list</small>
+      </h2>
+      <div id="videos" class="row"></div>
+    </div> <!-- /container -->
+
+        <script type='text/javascript' 
+                src='../steal/steal.js?youtube'>    
+        </script>
+    </body>
+</html>

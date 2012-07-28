@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>Youtube.Video.Create</title>
+        <style type='text/css'>
+            body {font-family: verdana}
+        </style>
+	</head>
+	<body>
+	    <h1>Youtube.Video.Create Demo</h1>
+		<form id='create' action=''></form>
+		<div id='videos'></div>
+		<script type='text/javascript' 
+                src='../../../steal/steal.js'>
+        </script>
+		<script type='text/javascript'>
+			steal('youtube/video/create','youtube/fixtures',function(){
+				
+				$('#create').youtube_video_create();
+				Youtube.Models.Video.bind('created', function(ev, video){
+					$('<div>').html("<h3>"+video.name+"</h3><p>"+video.description+"</p>")
+					        .appendTo( $('#videos') )
+				})
+				
+			})
+		</script>
+	</body>
+</html>
