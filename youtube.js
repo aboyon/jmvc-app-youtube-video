@@ -11,4 +11,7 @@ steal(
                     list: new Youtube.Models.Video.List()
                 });
 		$('#create').youtube_video_create();
+                $('#loader').fadeOut('slow',function(){
+                   $('#body_container').fadeIn('slow'); 
+                });
 })

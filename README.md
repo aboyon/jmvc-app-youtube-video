@@ -11,7 +11,7 @@ This is a very simple example about how to persist the user data using localStor
 
 ### Online demo
 
-You can take a look to a live demo [here](http://davidsilveira.me/scripts/jmvc-apps/youtube)
+You can take a look to a live demo [here](http://davidsilveira.me/scripts/jmvc-apps/youtube/index.html)
 
 ### Pre-requisites
 
