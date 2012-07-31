@@ -4,6 +4,7 @@ steal(
 	'./fixtures/fixtures.js',	// sets up fixtures for your models
 	'youtube/video/create',
 	'youtube/video/list',
+        'youtube/URL',
         'jquery/lang/json',
 	function(){					// configure your application
 		

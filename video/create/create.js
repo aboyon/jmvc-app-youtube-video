@@ -43,7 +43,8 @@ $.Controller('Youtube.Video.Create',
             } else if(url.toLowerCase().match(/youtube.com\/watch\?v=/gi) == null) {
                 throw "Please enter a youtube URL";
             } else {
-                this.video_code = url.match(/v=(.*)/gi).toString().split('=')[1];
+                var query_string = $.parseParams( url.split('?')[1] || '' );
+                this.video_code = query_string.v;
                 Youtube.Models.Video.findOne({code: this.video_code },$.proxy(function(rec){
                     if (!rec) {
                         $.get('http://gdata.youtube.com/feeds/api/videos/'+this.video_code,{
