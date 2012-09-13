@@ -1,13 +1,12 @@
 steal(
-	'./youtube.css', 			// application CSS file
-	'./models/models.js',		// steals all your models
-	'./fixtures/fixtures.js',	// sets up fixtures for your models
+	'./youtube.css',
+	'./models/models.js',
+	'./fixtures/fixtures.js',
 	'youtube/video/create',
 	'youtube/video/list',
         'youtube/URL',
         'jquery/lang/json',
-	function(){					// configure your application
-		
+	function(){
 		$('#videos').youtube_video_list({
                     list: new Youtube.Models.Video.List()
                 });
@@ -15,4 +14,4 @@ steal(
                 $('#loader').fadeOut('slow',function(){
                    $('#body_container').fadeIn('slow'); 
                 });
-})
+});

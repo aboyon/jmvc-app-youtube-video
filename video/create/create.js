@@ -54,7 +54,10 @@ $.Controller('Youtube.Video.Create',
                                     title       : data.entry.title.$t,
                                     code        : this.video_code,
                                     created_at  : data.entry.published.$t,
-                                    youtube_link: data.entry.link[0].href
+                                    youtube_link: data.entry.link[0].href,
+                                    thumbs      : data.entry.media$group.media$thumbnail,
+                                    raw         : data.entry
+                                    
                             };
                             new Youtube.Models.Video(this.video).save();
                         }, this),'json');
