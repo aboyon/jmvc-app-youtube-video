@@ -1,6 +1,6 @@
-<div class="span4 well" id="<%= id %>">
-    <h3 title="<%= title %>"><%= (title.length > 20) ? title.substring(0,20)+'...' : title %></h3>
-    <img src="<%= thumbs[0].url %>" class="video_thumb" width="250" height="130" />
+<div class="span3 well video-block" id="<%= id %>">
+    <h4 title="<%= title %>"><%= (title.length > 20) ? title.substring(0,20)+'...' : title %></h4>
+    <img src="<%= thumbs[0].url %>" class="img-rounded video_thumb" width="250" height="130" />
     <p><span class="label label-info">Created at: <%= created_at %></span></p>
     <a class="btn" target="_blank" href="<%= youtube_link %>">View on youtube</a>
 </div>
