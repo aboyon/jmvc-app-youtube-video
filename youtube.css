@@ -46,3 +46,15 @@ body {
     font-size: 12px;
     line-height: 13px;
 }
+
+.overlay {
+    background-color:#CCC;
+    opacity: 0.5;
+}
+
+.player_holder {
+    display:none;
+    background-color: #333;
+    z-index: 1000;
+    position: absolute;
+}

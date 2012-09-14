@@ -1,6 +1,9 @@
 <div class="span3 well video-block" id="<%= id %>">
     <h4 title="<%= title %>"><%= (title.length > 20) ? title.substring(0,20)+'...' : title %></h4>
+    <div class="player_holder"></div>
     <img src="<%= thumbs[0].url %>" class="img-rounded video_thumb" width="250" height="130" />
     <p><span class="label label-info">Created at: <%= created_at %></span></p>
-    <a class="btn" target="_blank" href="<%= youtube_link %>">View on youtube</a>
+    <a class="btn btn-info btn-mini play_video" data-video-id="<%= id %>" href="javascript:;"><i class="icon-play"></i> Watch</a>
+    <a class="btn btn-mini" target="_blank" href="<%= youtube_link %>"><i class="icon-facetime-video"></i> View on youtube</a>
+    <a class="btn btn-mini btn-danger destroy" href="javascript:;"><i class="icon-trash"></i></a>
 </div>

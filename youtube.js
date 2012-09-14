@@ -7,6 +7,7 @@ steal(
 	'youtube/video/create',
 	'youtube/video/list',
         'youtube/video/search',
+        'youtube/video/play',
         'youtube/URL',
         'jquery/lang/json',
 	function(){
@@ -14,10 +15,7 @@ steal(
                     list: new Youtube.Models.Video.List()
                 });
                 $('#create').youtube_video_create();
-                $('#search_box').youtube_video_search({
-                    collapsed: true,
-                    container: $('.hero-unit')
-                });
+                $('#search_box').youtube_video_search();
                 $('#loader').fadeOut('slow',function(){
                    $('#body_container').fadeIn('slow'); 
                 });
