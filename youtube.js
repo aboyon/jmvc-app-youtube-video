@@ -27,7 +27,7 @@ steal(
 steal('jquery/event/drag',
         'jquery/event/drag/scroll',
         'jquery/event/drag/limit').then(function($){
-         $('#search_box').bind("draginit",function(ev, drag){
+         $('#search_box, .player_holder').bind("draginit",function(ev, drag){
              if(ev.target.nodeName.toLowerCase() == 'input'){
 		drag.cancel();
               }

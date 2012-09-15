@@ -48,13 +48,17 @@ body {
 }
 
 .overlay {
-    background-color:#CCC;
+    background-color:#FFF;
     opacity: 0.5;
+    display:none;
 }
 
 .player_holder {
     display:none;
-    background-color: #333;
+    background-color: #C0C0C0;
     z-index: 1000;
     position: absolute;
+    padding:10px;
+    border-radius: 6px 6px 6px 6px;
+    cursor: move;
 }

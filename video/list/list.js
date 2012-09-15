@@ -34,15 +34,27 @@ $.Controller('Youtube.Video.List',
             }
         },
 
+        '.closePlayer click': function() {
+            $('.player_holder').html('').hide();
+        },
+
 	'.play_video click': function(el) {
+            $('.player_holder').html('').hide();
             el.parent().css({
                overflow: 'visible'
             });
+            var img = el.parent().find('img');
+            var leftPos = parseInt(img.position().left - img.width()/2);
+            if (parseInt(leftPos+560) > $(document).width()) {
+                leftPos = parseInt($(document).width() - 580);
+            }
             el.parent().find('.player_holder').toggle().css({
-               width: '400px',
-               height: '300px'
-            }).htmt($.View('//youtube/video/play/views/player.ejs'));
-            el.parent().find('img').toggle();
+               width: '560px',
+               height: 'auto !important',
+               left: leftPos + 'px',
+               top: parseInt(img.position().top - img.height()/2) + 'px',
+               position: 'absolute'
+            }).html($.View('//youtube/video/play/views/player.ejs', el.closest('.video').model()));
         },
         
 	"{Youtube.Models.Video} destroyed" : function(Video, ev, video) {
