@@ -1,5 +1,3 @@
 <%for(var i = 0; i < this.length ; i++){%>
-	<div <%= this[i]%>>
-		<%== $.View('//youtube/video/list/views/video.ejs', this[i] )%>
-	</div>
+        <%== $.View('//youtube/video/list/views/video_append.ejs', { video: this[i] })%>
 <%}%>

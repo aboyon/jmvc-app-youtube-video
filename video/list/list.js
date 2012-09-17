@@ -61,7 +61,7 @@ $.Controller('Youtube.Video.List',
             video.elements(this.element).remove();
 	},
 	"{Youtube.Models.Video} created" : function(Video, ev, video){
-            this.element.append(this.view('video', video));
+            this.element.append(this.view('video_append', { video: video }));
             var count = parseInt($('#video_count').html())+1;
             $('#video_count').html(count);
 	},
