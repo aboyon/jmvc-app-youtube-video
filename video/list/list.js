@@ -64,6 +64,11 @@ $.Controller('Youtube.Video.List',
             this.element.append(this.view('video_append', { video: video }));
             var count = parseInt($('#video_count').html())+1;
             $('#video_count').html(count);
+            $('.player_holder').bind("draginit",function(ev, drag){
+             if(ev.target.nodeName.toLowerCase() == 'input'){
+		drag.cancel();
+              }
+            });
 	},
 	"{Youtube.Models.Video} updated" : function(Video, ev, video){
 		video.elements(this.element)
