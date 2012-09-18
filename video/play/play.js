@@ -25,18 +25,18 @@ $.Controller('Youtube.Video.Play',
                left: leftPos + 'px',
                top: parseInt(img.position().top - img.height()/2) + 'px',
                position: 'absolute'
-            }).html($.View('//youtube/video/play/views/player.ejs', model));
+            }).html($.View('//youtube/video/play/views/player.ejs', model))
+            .find('.closePlayer').bind('click',function(){
+                $('.player_holder').html('').hide();
+            });
         }
+        
 },
 /** @Prototype */
 {
 	init : function(){
             return this;
-	},
-        
-        '.closePlayer click': function() {
-            $('.player_holder').html('').hide();
-        }
+	}
 })
 
 });

@@ -49,7 +49,6 @@ $.Model('Youtube.Models.Video',
   	destroy : function(id, success){
             this.localStore(function(videos){
                for(var i = 0; i<videos.length; i++) {
-                   console.log(videos[i]);
                    if (videos[i].id === id) {
                        videos.splice(i,1);
                        break;

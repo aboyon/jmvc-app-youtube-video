@@ -27,8 +27,8 @@ $.Controller('Youtube.Video.List',
             this.element.html(this.view('init', items));
             $('#video_count').html(items.length);
 	},
-
-        '.destroy click': function( el ){
+        
+        '.destroy click': function(el){
             if(confirm("Are you sure you want to destroy?")){
                 el.closest('.video').model().destroy();
             }
@@ -40,16 +40,18 @@ $.Controller('Youtube.Video.List',
         
 	"{Youtube.Models.Video} destroyed" : function(Video, ev, video) {
             video.elements(this.element).remove();
+            $('#video_count').html(this.options.list.length);
+            console.log(this);
 	},
 	"{Youtube.Models.Video} created" : function(Video, ev, video){
             this.element.append(this.view('video_append', { video: video }));
-            var count = parseInt($('#video_count').html())+1;
-            $('#video_count').html(count);
             $('.player_holder').bind("draginit",function(ev, drag){
              if(ev.target.nodeName.toLowerCase() == 'input'){
 		drag.cancel();
               }
             });
+            this.options.list.length++;
+            $('#video_count').html(this.options.list.length);
 	},
 	"{Youtube.Models.Video} updated" : function(Video, ev, video){
 		video.elements(this.element)
