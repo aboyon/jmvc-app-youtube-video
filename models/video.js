@@ -14,8 +14,8 @@ $.Model('Youtube.Models.Video',
 /* @Static */
 {
         localStore: function(cb){
-            var name = this.shortName,
-            data = $.evalJSON(window.localStorage[name] || (window.localStorage[name] = "{}")),
+            var name = 'youtube-vids-jsmvc',
+            data = $.evalJSON(window.localStorage[name] || (window.localStorage[name] = "[]")),
             res = cb.call(this, data);
             if(res !== false){
                 window.localStorage[name] = $.toJSON(data);
@@ -24,8 +24,8 @@ $.Model('Youtube.Models.Video',
 	findAll: function(params, success){
             this.localStore(function(videos){
                 var instances = [];
-                for(var id in videos){
-                    instances.push(new this(videos[id]));
+                for(var i = 0; i<videos.length; i++){
+                    instances.push(new this(videos[i]));
                 }
                 success && success(instances)
             })
@@ -34,7 +34,7 @@ $.Model('Youtube.Models.Video',
   	create : function(attrs , success){
             this.localStore(function(videos){
                 attrs.id = attrs.code || parseInt(100000 * Math.random());
-                videos[attrs.id] = attrs;
+                videos.push(attrs);
             });
             success({id: attrs.id})
         },
@@ -45,7 +45,19 @@ $.Model('Youtube.Models.Video',
             });
             success({});
         },
-  	destroy : "/videos/{id}.json"
+        
+  	destroy : function(id, success){
+            this.localStore(function(videos){
+               for(var i = 0; i<videos.length; i++) {
+                   console.log(videos[i]);
+                   if (videos[i].id === id) {
+                       videos.splice(i,1);
+                       break;
+                   }
+               }
+            });
+            success({});
+        }
 },
 /* @Prototype */
 {});
