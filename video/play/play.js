@@ -29,6 +29,7 @@ $.Controller('Youtube.Video.Play',
             .find('.closePlayer').bind('click',function(){
                 $('.player_holder').html('').hide();
             });
+            
         }
         
 },
