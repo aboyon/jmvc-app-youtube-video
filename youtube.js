@@ -1,7 +1,5 @@
 steal(
-	'./styles/css/bootstrap.min.css',
-        './styles/css/bootstrap-responsive.min.css',
-        './youtube.css',
+	'./youtube.css',
 	'./models/models.js',
 	'./fixtures/fixtures.js',
 	'youtube/video/create',
